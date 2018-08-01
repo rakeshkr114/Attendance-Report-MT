@@ -1,0 +1,21 @@
+{
+  "name": "Attendance Report",
+  "version": "1.0",
+		
+  "manifest_version": 2,
+  "description": "Show Attendance Report when clicked!",
+  
+  "permissions": [
+    "<all_urls>","tabs","activeTab"
+  ],
+
+  "icons": {
+    "128": "icon.jpg"
+  },
+  
+  "browser_action": {
+    "default_icon": "icon.jpg",
+	"default_title": "Attendance-Report",
+	"default_popup": "my.html"
+  }
+}
