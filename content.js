@@ -1,6 +1,6 @@
 // content.js
 
-function generateReport() {{
+function generateReport(){
 			if(sessionStorage.getItem("clickedToGenerate") != "True"){
 				//generate Report
 				document.getElementsByName("ctl00$ContentRequestor$btnSearch")[0].click();
@@ -8,4 +8,5 @@ function generateReport() {{
 			}
 			
 }
+
 window.onload = generateReport;

@@ -9,6 +9,7 @@ chrome.tabs.query({ "url": "https://webapps.mindtree.com/MAS/forms/AttendanceRep
 
 	// if no AttendanceReport url is opened, return
 	if(tabs.length==0){
+		document.getElementById("logged_lable").style.display = "none";
 		document.getElementById("time").innerHTML="Please open Attendance-Report and generate report for calculation";
 		return;
 	}	
@@ -49,6 +50,8 @@ chrome.tabs.query({ "url": "https://webapps.mindtree.com/MAS/forms/AttendanceRep
 				if(required_half_min==1){
 					required_half_min=30;
 				}
+				else
+					required_half_min="00";
 				
 				var Total_Required_Hrs=(count-holydays-other_leaves-required_half_hrs)*9;
 				//var Total_Required_Min=
@@ -59,6 +62,7 @@ chrome.tabs.query({ "url": "https://webapps.mindtree.com/MAS/forms/AttendanceRep
 				`
 	},function (Logged_Hrs_By_Required_Hrs) { // Execute your code
 			document.getElementById("time").innerHTML=Logged_Hrs_By_Required_Hrs;  // Set value in my.html
+			
 	}); // end of chrome executescript
 });  // tabs query end
 
