@@ -17,5 +17,13 @@
     "default_icon": "icon.jpg",
 	"default_title": "Attendance-Report",
 	"default_popup": "my.html"
-  }
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["https://webapps.mindtree.com/MAS/forms/AttendanceReport.aspx"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
 }
