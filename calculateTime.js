@@ -37,6 +37,7 @@ chrome.tabs.query({ "url": "https://webapps.mindtree.com/MAS/forms/AttendanceRep
 					}
 					//All other kind of leaves
 					else if(parent.nextSibling.nextSibling.firstChild.outerText != "No"){
+						//alert(parent.nextSibling.nextSibling.firstChild.outerText);
 						other_leaves++;
 					}
 					//working days
@@ -57,7 +58,9 @@ chrome.tabs.query({ "url": "https://webapps.mindtree.com/MAS/forms/AttendanceRep
 				//var Total_Required_Min=
 				Total_hrs+=Math.floor(Total_min/60);
 				Total_min=Total_min%60;
-				var Logged_Hrs_By_Required_Hrs=""+Total_hrs+":"+Total_min+" / "+Total_Required_Hrs+":"+required_half_min;
+				//Formatting minute with leading zero for single digit mins
+				Total_min_formatted=(Total_min < 10) ? ("0" + Total_min) : Total_min;
+				var Logged_Hrs_By_Required_Hrs=""+Total_hrs+":"+Total_min_formatted+" / "+Total_Required_Hrs+":"+required_half_min;
 				Logged_Hrs_By_Required_Hrs;
 				`
 	},function (Logged_Hrs_By_Required_Hrs) { // Execute your code
