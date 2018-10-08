@@ -26,7 +26,7 @@ chrome.tabs.query({ "url": "https://webapps.mindtree.com/MAS/forms/AttendanceRep
 				for (var i = 0; i < count; i++){
 					var parent=div_elm[i].parentElement;
 					//weekends
-					if(parent.style.backgroundColor == "whitesmoke"){
+					if(parent.style.backgroundColor == "whitesmoke" || parent.nextSibling.nextSibling.nextSibling.firstChild.outerText == "Holiday" ){
 						holydays++;
 					}
 					//Half day leave
@@ -36,7 +36,7 @@ chrome.tabs.query({ "url": "https://webapps.mindtree.com/MAS/forms/AttendanceRep
 						Total_min+=Number(div_elm[i].outerText.split(":")[1]);
 					}
 					//All other kind of leaves
-					else if(parent.nextSibling.nextSibling.firstChild.outerText != "No"){
+					else if(parent.nextSibling.nextSibling.firstChild.outerText != "No" ){
 						//alert(parent.nextSibling.nextSibling.firstChild.outerText);
 						other_leaves++;
 					}
