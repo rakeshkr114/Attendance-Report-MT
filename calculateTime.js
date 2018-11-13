@@ -26,7 +26,8 @@ chrome.tabs.query({ "url": "https://webapps.mindtree.com/MAS/forms/AttendanceRep
 				for (var i = 0; i < count; i++){
 					var parent=div_elm[i].parentElement;
 					//weekends
-					if(parent.style.backgroundColor == "whitesmoke" || parent.nextSibling.nextSibling.nextSibling.firstChild.outerText == "Holiday" ){
+					if(parent.style.backgroundColor == "whitesmoke" || parent.nextSibling.firstChild.outerText == "Compensatory Off"
+							|| (parent.nextSibling.nextSibling.nextSibling.firstChild.outerText == "Holiday" && parent.nextSibling.firstChild.outerText == "No")){
 						holydays++;
 					}
 					//Half day leave
